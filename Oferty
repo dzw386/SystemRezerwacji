@@ -1,0 +1,11 @@
+CREATE TABLE Oferty (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tytul VARCHAR(255) NOT NULL,
+    cena DECIMAL(10, 2),
+    kategoria ENUM('Fryzjer', 'Mechanik samochodowy', 'Lekarz', 'Inna') NOT NULL,
+    data_dodania DATETIME DEFAULT CURRENT_TIMESTAMP,
+    promocja BOOLEAN DEFAULT FALSE,
+    znizka_procentowa DECIMAL(5, 2) DEFAULT 0,
+    data_rozpoczecia_promocji DATETIME,
+    data_zakonczenia_promocji DATETIME
+);
