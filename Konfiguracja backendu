@@ -1,0 +1,35 @@
+
+Potrzebne technologie:
+
+ASP.NET Core (Backend).
+Entity Framework Core: ORM do pracy z bazą danych.
+C#: Język programowania do napisania logiki backendu.
+Jak zaimplementować:
+
+Utworzymy modele danych w folderze Models:
+
+User (ID, Username, PasswordHash, Email, Role).
+Offer (ID, Name, Description, Price, AvailableSlots).
+Booking (ID, UserId, OfferId, BookingDate, Status).
+Skonfigurujemy Entity Framework Core w pliku Startup.cs (lub w Program.cs):
+
+csharp
+KOD:
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+}
+Utworzenie klasę kontekstową ApplicationDbContext w folderze Data:
+
+
+
+public class ApplicationDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; }
+    public DbSet<Offer> Offers { get; set; }
+    public DbSet<Booking> Bookings { get; set; }
+
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options) { }
+}
