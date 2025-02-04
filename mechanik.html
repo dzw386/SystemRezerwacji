@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Rezerwacji - Mechanik</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <h1>System Rezerwacji - Mechanik</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#reservation">Rezerwacja</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="index.html">Powrót do systemu</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="services" class="services">
+        <div class="service">
+            <img src="mechanik.jpg" alt="Naprawa silnika">
+            <h2>Naprawa silnika</h2>
+            <p>Profesjonalna naprawa silnika i układów napędowych.</p>
+            <button>Więcej</button>
+        </div>
+        <div class="service">
+            <img src="opony.jpg" alt="Wymiana opon">
+            <h2>Wymiana opon</h2>
+            <p>Szybka wymiana opon z dbałością o bezpieczeństwo.</p>
+            <button>Więcej</button>
+        </div>
+        <div class="service">
+            <img src="klima.jpg" alt="Serwis klimatyzacji">
+            <h2>Serwis klimatyzacji</h2>
+            <p>Sprawdzamy i napełniamy klimatyzację w Twoim samochodzie.</p>
+            <button>Więcej</button>
+        </div>
+    </section>
+    
+    <section id="reservation" class="reservation">
+        <h2>Zarezerwuj wizytę u mechanika</h2>
+        <form action="formularz.php" method="POST">
+            <label for="name">Imię i nazwisko:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="service">Usługa:</label>
+            <select id="service" name="service" required>
+                <option value="naprawa-silnika">Naprawa silnika</option>
+                <option value="wymiana-opon">Wymiana opon</option>
+                <option value="serwis-klimatyzacji">Serwis klimatyzacji</option>
+            </select>
+            
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <button type="submit">Rezerwuj</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 System Rezerwacji. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
